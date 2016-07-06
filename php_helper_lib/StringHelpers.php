@@ -31,18 +31,11 @@ function getRewindPositionOfWord($str, $delim, $rewindVal, $word)
 	while ($currPos != 0 && $rewindVal > 0)
 	{
 		$currChar = getCharAtIndex($str, $currPos);
-		
-		echo "\nCurr Char -> $currChar \n";
-		
+
 		if($currChar == $delim)
 		{
-			echo "\nCurrChar -> $currChar and Delimiter -> $delim";
-			echo "\n";
-			
-			
 			$rewindPosition = $currPos + 1;
-			
-			echo "\nRewind Position -> $rewindPosition \n";
+
 			$rewindVal--;
 		}
 		
