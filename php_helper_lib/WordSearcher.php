@@ -1,6 +1,6 @@
 <?php
     
-    include("StringHelpers.php");
+    include_once("StringHelpers.php");
 
 
     class WordSearcher

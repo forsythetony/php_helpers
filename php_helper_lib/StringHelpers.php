@@ -1,5 +1,31 @@
 <?php
 	
+function getAllOccurrencesOfSubstring($str, $subStr, $caseSensitive = true)
+{
+	if (!$caseSensitive)
+	{
+		$str = strtolower($str);
+		$subStr = strtolower($subStr);
+	}
+
+	$positions = array();
+
+	$lastPos = 0;
+
+	while(($lastPos = strpos($str, $subStr, $lastPos)) !== false)
+	{
+		$positions[] = $lastPos;
+		$lastPos = $lastPos + strlen($subStr);
+	}
+
+	if(count($positions) == 0)
+	{
+		return false;
+	}
+	else {
+		return $positions;
+	}
+}
 function getRewindPositionOfWord($str, $delim, $rewindVal, $word)
 {
 	if (!validateString($str))
